@@ -1,23 +1,26 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: APWorld Fuzzer Action
+description: Fuzz your custom APWorlds against Archipelago, in CI
+author: dish
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: heart
-  color: red
+  icon: check-circle
+  color: purple
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  world:
+    description: The world to fuzz
     required: true
-    default: '1000'
+  num_gens:
+    description: The number of fuzzer runs to do.
+    required: false
+    default: '100'
 
 # Define your outputs here.
 outputs:
-  time:
-    description: Your output description here
+  results:
+    description: The fuzzer results
 
 runs:
   using: node20
